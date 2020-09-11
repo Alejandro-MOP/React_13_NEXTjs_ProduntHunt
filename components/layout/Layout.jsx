@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../layout/Header';
 import { Global, css } from '@emotion/core';
+import Head from 'next/head';
 
 const Layout = props => {
     return ( 
@@ -11,7 +12,10 @@ const Layout = props => {
                     :root{
                         --gris: #3d3d3d;
                         --gris2: #6f6f6f;
+                        --gris3: #e1e1e1;
                         --naranja: #DA552F;
+                        --roboto: 'Roboto Slab', serif;
+                        --ptsans: 'PT Sans', sans-serif;
                     }
 
                     html{
@@ -23,11 +27,19 @@ const Layout = props => {
                     }
                     body{
                         font-size: 1.6rem;
-                        line-height: 1.5
+                        line-height: 1.5;
+                        font-family: var(--ptsans);
                     }
-                    h1,h2,h3{
+                    h1, h2, h3{
                         margin: 0 0 2rem 0;
                         line-height: 1.5;
+                    }
+                    h1, h2 {
+                        font-family: var(--roboto);
+                        font-weight: 700;
+                    }
+                    h3 {
+                        font-family: var(--ptsans);
                     }
                     ul{
                         list-style: none;
@@ -37,8 +49,18 @@ const Layout = props => {
                     a{
                         text-decoration: none;
                     }
+                    
                 `}
             />
+
+            <Head>
+                <html lang="es" />
+                <title>Product Hunt | Firebase y Next.js</title>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+                <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet"/>
+                <link rel="stylesheet" href="/static/css/app.css"/>
+            </Head>
+
             <Header/>
 
             <main>
