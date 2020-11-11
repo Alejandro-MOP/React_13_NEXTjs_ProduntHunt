@@ -2,16 +2,16 @@ import React from 'react';
 import Layout from '../components/layout/Layout';
 
 
-const Home = () => {
+const Buscar = () => {
   return (
 
     <div>
       <Layout>
-        <h1>Inicio</h1>
+        <h1>Buscar</h1>
       </Layout>
     </div>
 
   )
 }
 
-export default Home
+export default Buscar
