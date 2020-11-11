@@ -4,10 +4,10 @@ import { Global, css } from '@emotion/core';
 import Head from 'next/head';
 
 const Layout = props => {
-    return ( 
+    return (
 
         <>
-            <Global 
+            <Global
                 styles={css `
                     :root{
                         --gris: #3d3d3d;
@@ -49,7 +49,6 @@ const Layout = props => {
                     a{
                         text-decoration: none;
                     }
-                    
                 `}
             />
 
@@ -70,5 +69,5 @@ const Layout = props => {
         </>
     );
 }
- 
+
 export default Layout;

@@ -15,7 +15,7 @@ const Boton = styled.a`
 
   &:hover{
       cursor: pointer;
-      
+
   }
 `;
 

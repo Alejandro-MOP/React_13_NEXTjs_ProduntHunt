@@ -12,7 +12,7 @@ import Boton from '../ui/Boton';
 
 const ContenedorHeader = styled.div`
     max-width: 1200px;
-    width: 95%95%;
+    width: 95%;
     margin: 0 auto;
     @media (min-width: 768px){
         display: flex;
@@ -27,23 +27,32 @@ const Logo = styled.p`
   font-weight: 700;
   font-family: var(--roboto);
   margin-right: 2rem;
+  margin-top: 3.5rem;
+  &:hover{
+      cursor:pointer;
+  }
 `;
 
 
 const Header = () => {
 
-    const usuario = true;
+    const usuario = false;
 
-    return ( 
+    return (
 
         <header
-            css={css `
+            css={css`
                 border-bottom: 2px solid var(--gris3);
                 padding: 1rem 0;
             `}
         >
             <ContenedorHeader>
-                <div>
+                <div
+                    css={css`
+                        display: flex;
+                        align-items: center;
+                    `}
+                >
                     <Link href="/">
                         <Logo>P</Logo>
                     </Link>
@@ -61,30 +70,29 @@ const Header = () => {
                 >
 
                 {usuario
-                    ?(<> 
+                    ?(<>
                         <p css={css` margin-right: 2rem; `}>
-                            Hola: Alex                    
+                            Hola: Alex
                         </p>
-                        <Boton bgColor="true">Cerrar Sesión</Boton>                            
-                    </>
+                        <Boton bgColor="true">Cerrar Sesión</Boton>
+                      </>
                     )
 
                     :(<>
-                        <Link href="/">
+                        <Link href="/login">
                             <Boton bgColor="true">
                                 Login
                             </Boton>
                         </Link>
-                        <Link href="/">
+                        <Link href="/crear-cuenta">
                             <Boton>
                                 Crear Cuenta
                             </Boton>
                         </Link>
-                    </>
+                     </>
                     )
 
                 }
-                    
 
 
                 </div>
