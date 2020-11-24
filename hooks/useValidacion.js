@@ -32,13 +32,20 @@ const useValidacion = ( stateInicial, validar, fn ) => {
         guardarSubmitForm(true);
     }
 
+    //cuando se realiza el evento de blur (entrar y salir del input)
+
+    const handleBlur = () => {
+        const erroresValidacion = validar(valores); //reglas de validación
+        guardarErrores(erroresValidacion);
+    }
+
 
     return {
         valores,
         errores,
-        submitForm,
         handleChange,
-        handleSubmit
+        handleSubmit,
+        handleBlur
     }
 }
 
