@@ -21,8 +21,11 @@ const CrearCuenta = () => {
 
     const [error, guardarError] = useState(false);
 
+    const { valores, errores, handleChange, handleSubmit, handleBlur } = useValidacion(STATE_INICIAL, validarCrearCuenta, crearCuenta);
 
-    const crearCuenta = async () => {
+    const { nombre, email, password } = valores;
+
+    async function crearCuenta() {
         try {
             await firebase.registrar(nombre, email, password);
             Router.push('/');
@@ -31,11 +34,6 @@ const CrearCuenta = () => {
             guardarError(error.message);
         }
     }
-
-    const { valores, errores, handleChange, handleSubmit, handleBlur } = useValidacion(STATE_INICIAL, validarCrearCuenta, crearCuenta);
-
-    const { nombre, email, password } = valores;
-
     return (
 
         <div>
